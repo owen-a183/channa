@@ -1,3 +1,5 @@
+import React from 'react';
+import { HelmetProvider } from 'react-helmet-async';
 import { BrowserRouter } from 'react-router-dom';
 
 type AppProviderProps = {
@@ -5,5 +7,11 @@ type AppProviderProps = {
 };
 
 export const AppProvider = ({ children }: AppProviderProps) => {
-  return <BrowserRouter>{children}</BrowserRouter>;
+  return (
+    <React.Suspense>
+      <HelmetProvider>
+        <BrowserRouter>{children}</BrowserRouter>
+      </HelmetProvider>
+    </React.Suspense>
+  );
 };

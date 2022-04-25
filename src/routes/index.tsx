@@ -1,21 +1,11 @@
 import { useRoutes } from 'react-router-dom';
 
-import { lazyImport } from '@/utils/lazyImport';
-
-const { Home } = lazyImport(() => import('@/features/home'), 'Home');
-const { Articles } = lazyImport(() => import('@/features/articles'), 'Articles');
+import { publicRoutes } from './public';
 
 export const AppRoutes = () => {
-  const routes = useRoutes([
-    {
-      path: '/',
-      element: <Home />,
-    },
-    {
-      path: '/artikel',
-      element: <Articles />,
-    },
-  ]);
+  const routes = publicRoutes;
 
-  return <>{routes}</>;
+  const element = useRoutes([...routes]);
+
+  return <>{element}</>;
 };
