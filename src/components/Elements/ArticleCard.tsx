@@ -26,7 +26,7 @@ export const ArticleCard = ({
   const createdAtDate = formatDate(createdAt, 'DD MMMM YYYY');
 
   return (
-    <Col md={4} lg={4}>
+    <Col md={4}>
       <Col md={12} className="mb-4 mb-lg-4 article-card background-white">
         <div className="article-content d-block">
           <a href={url}>

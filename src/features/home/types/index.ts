@@ -14,3 +14,12 @@ export type Article = {
   imageAlt: string;
   content: string;
 } & BaseEntity;
+
+export type Freebook = {
+  title: string;
+  author: string;
+  description: string;
+  imageUrl: string;
+  imageAlt: string;
+  downloadUrl: string;
+} & BaseEntity;
